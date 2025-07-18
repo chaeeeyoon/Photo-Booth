@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DimiGallery</title>
+    <link rel="stylesheet" type="text/css" href = "../static/camera.css">
+</head>
+<body>
+    <button onclick = javascript:location.href="/">Return</button>
+    <div>
+<div style = "height : 700px; width : 1800;">
+    {%if data %}
+    
+    {% if length > 4 %}
+
+    {% for i in range(4) %}
+    <div id = "phot" style = "float : left;">
+        <img style = "padding: 30px; margin-left : 20px;" onclick = javascript:location.href="/gallery/{{url_for('static', filename = data[i])}}" src="../static/folder_image.png" height = 200 width=250>
+        <span class="index">{{i+1+((num-1)*8)}}</span>
+    </img>
+ 
+    </div> 
+{% endfor %}
+
+    {% for i in range(4,length) %}
+    <div id = "phot" style = "float : left;">
+        <img style = "padding: 30px; margin-left : 20px;" onclick = javascript:location.href="/gallery/{{url_for('static', filename = data[i])}}" src="../static/folder_image.png" height = 200 width=250>
+        <span class="index">{{i+1+((num-1)*8)}}</span>
+    </div> 
+    {% endfor %}
+    {% else %}
+    {% for i in range(length) %}
+    <div id = "phot" style = "float : left;">
+        <img style = "padding: 30px; margin-left : 20px;" onclick = javascript:location.href="/gallery/{{url_for('static', filename = data[i])}}" src="../static/folder_image.png" height = 200 width=250>
+        <span class="index">{{i+1+((num-1)*8)}}</span>
+    </div> 
+    {% endfor %}
+
+    {% endif %}
+</div>
+<div style="width: 500px; height : 50px; margin-left : 50%;">
+    {% if num >= 1 %}
+    <div style = "float : left;  ">
+        {% if num > 1  %}
+        <button onclick = javascript:location.href="/gallery/{{num-1}}">
+            <
+        </button>
+        {% endif %} 
+        <a>{{num}} / {{maxnum}}</a>  
+        {% if num < maxnum %}  
+        <button onclick = javascript:location.href="/gallery/{{num+1}}">
+            >
+        </button>
+        {% endif %} 
+    </div>
+    {% endif %}
+    {% else %}
+    <h1>None!</h1>
+    {% endif %}
+    </div>
+</div>
+</body>
+
+</html>

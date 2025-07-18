@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimi네컷</title>
+    <link rel="stylesheet" type="text/css" href = "/static/camera.css">
+</head>
+<body>
+  
+    {%if data and length == 4%}
+    <div id = "a">
+        <div id = "Pframe">
+            <button onclick = javascript:location.href="/gallery/1">Return</button>
+            {% for path in data %}
+            <div id ="photo">
+                <img src="{{url_for('static', filename = path)}}" height = 200 width=250>
+            </div> 
+            {% endfor %}
+            <div style="margin-top:5px; margin-left: 20px;">
+            <div style="float:left;"> 
+            <img src="/static/dimigo.png">
+            </div>
+            <div style="margin-left: 30px; float:left;"> 
+            <p id ="memo">Dimi네컷</p>
+            </div>
+            </div>        
+        </div>
+
+        </div>
+    </div>
+    {% else %}
+    <h1>Error!</h1>
+    {% endif %}
+    
+</body>
+</html>

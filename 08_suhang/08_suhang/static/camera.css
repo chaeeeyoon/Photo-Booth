@@ -1,0 +1,43 @@
+@font-face {
+    font-family: 'BMJUA_otf';
+    src: url('../static/font/BMJUA_otf.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+#phot{
+    position: relative;
+}
+.index{
+    font-family: BMJUA_otf;
+    font-size: 50px;
+    color: black;
+    position:absolute;
+    top: 43%;
+    left: 50%;
+}
+
+#a{
+    text-align: center;
+    margin-top: 20px;
+}
+#memo{
+    margin-top: 15px;
+    font-family: BMJUA_otf;
+    font-size: 30px;
+    color: white;
+}
+img{
+    margin-left: 18px;
+}
+#Pframe{
+    width:280px;
+    height:950px;
+    background-color:black;
+    display: inline-block;
+    padding-top: 10px;
+}
+
+#photo{
+    width:200px;
+    height:210px;
+}

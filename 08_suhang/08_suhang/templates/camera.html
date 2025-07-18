@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimi네컷</title>
+    <link rel="stylesheet" type="text/css" href = "../static/camera.css">
+</head>
+<body>
+    <div id = "a">
+        <div id = "Pframe">
+            {%if data %}
+            <div id ="photo">
+                <img onclick="javascript:location.href='camera/1'" src="{{url_for('static', filename = data[0])}}" height = 200 width=250>
+            </div> 
+            <div id ="photo">
+                <img onclick="javascript:location.href='camera/2'" src="{{url_for('static', filename = data[1])}}" height = 200 width=250>
+            </div> 
+            <div id ="photo">
+                <img onclick="javascript:location.href='camera/3'" src="{{url_for('static', filename = data[2])}}" height = 200 width=250>
+            </div> 
+            <div id ="photo">
+                <img onclick="javascript:location.href='camera/4'" src="{{url_for('static', filename = data[3])}}" height = 200 width=250>
+            </div> 
+            {% else %}
+            <div id ="photo">
+                <img onclick="javascript:location.href='camera/1'" src="../static/temp.jpg" height = 200 width=250>
+            </div> 
+            <div id ="photo">
+                <img onclick="javascript:location.href='camera/2'" src="../static/temp.jpg" height = 200 width=250>
+            </div> 
+            <div id ="photo">
+                <img onclick="javascript:location.href='camera/3'" src="../static/temp.jpg" height = 200 width=250>
+            </div> 
+            <div>
+            <div id ="photo">
+                <img onclick="javascript:location.href='camera/4'" src="../static/temp.jpg" height = 200 width=250>
+            </div>
+            {% endif %}
+            <div style="margin-top:5px; margin-left: 20px;">
+            <div style="float:left;"> 
+            <img src="../static/dimigo.png">
+            </div>
+            <div style="margin-left: 30px; float:left;"> 
+            <p id ="memo">Dimi네컷</p>
+            </div>
+            </div>        
+        </div>
+
+        </div>
+    </div>
+</body>
+</html>
